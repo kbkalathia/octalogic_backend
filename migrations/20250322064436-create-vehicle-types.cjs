@@ -37,22 +37,37 @@ module.exports = {
       );
 
       // Seed values
+      const now = new Date();
       await queryInterface.bulkInsert(
         "Vehicle_Types",
         [
           {
             id: uuidv4(),
-            wheels: 2,
-            name: "Two Wheelers",
-            createdAt: new Date(),
-            updatedAt: new Date(),
+            wheels: 4,
+            name: "Hatchback",
+            createdAt: now,
+            updatedAt: now,
           },
           {
             id: uuidv4(),
             wheels: 4,
-            name: "Four Wheelers",
-            createdAt: new Date(),
-            updatedAt: new Date(),
+            name: "Sedan",
+            createdAt: now,
+            updatedAt: now,
+          },
+          {
+            id: uuidv4(),
+            wheels: 4,
+            name: "SUV",
+            createdAt: now,
+            updatedAt: now,
+          },
+          {
+            id: uuidv4(),
+            wheels: 2,
+            name: "Cruiser",
+            createdAt: now,
+            updatedAt: now,
           },
         ],
         { transaction }

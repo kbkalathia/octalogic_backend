@@ -46,81 +46,73 @@ module.exports = {
         { transaction }
       );
 
-      const twoWheelerType = vehicleTypes.find((v) => v.name === "Two Wheelers");
-      const fourWheelerType = vehicleTypes.find((v) => v.name === "Four Wheelers");
+      const getId = (typeName) =>
+        vehicleTypes.find((v) => v.name === typeName)?.id;
 
-      if (!twoWheelerType || !fourWheelerType) {
-        throw new Error("Vehicle type IDs not found");
-      }
-
-      // Insertion
       const now = new Date();
       await queryInterface.bulkInsert(
         "Vehicles",
         [
-          // Two Wheelers
+          // Hatchback
           {
             id: uuidv4(),
-            vehicle_type_id: twoWheelerType.id,
-            model: "Honda Activa",
+            vehicle_type_id: getId("Hatchback"),
+            model: "Maruti Swift",
             createdAt: now,
             updatedAt: now,
           },
           {
             id: uuidv4(),
-            vehicle_type_id: twoWheelerType.id,
-            model: "Yamaha R15",
-            createdAt: now,
-            updatedAt: now,
-          },
-          {
-            id: uuidv4(),
-            vehicle_type_id: twoWheelerType.id,
-            model: "TVS Apache",
-            createdAt: now,
-            updatedAt: now,
-          },
-          {
-            id: uuidv4(),
-            vehicle_type_id: twoWheelerType.id,
-            model: "Royal Enfield Classic",
-            createdAt: now,
-            updatedAt: now,
-          },
-          {
-            id: uuidv4(),
-            vehicle_type_id: twoWheelerType.id,
-            model: "Bajaj Pulsar",
+            vehicle_type_id: getId("Hatchback"),
+            model: "Hyundai i20",
             createdAt: now,
             updatedAt: now,
           },
 
-          // Four Wheelers
+          // Sedan
           {
             id: uuidv4(),
-            vehicle_type_id: fourWheelerType.id,
-            model: "Hyundai Creta",
+            vehicle_type_id: getId("Sedan"),
+            model: "Honda City",
             createdAt: now,
             updatedAt: now,
           },
           {
             id: uuidv4(),
-            vehicle_type_id: fourWheelerType.id,
-            model: "Mahindra Thar",
+            vehicle_type_id: getId("Sedan"),
+            model: "Hyundai Verna",
+            createdAt: now,
+            updatedAt: now,
+          },
+
+          // SUV
+          {
+            id: uuidv4(),
+            vehicle_type_id: getId("SUV"),
+            model: "Tata Harrier",
             createdAt: now,
             updatedAt: now,
           },
           {
             id: uuidv4(),
-            vehicle_type_id: fourWheelerType.id,
-            model: "Toyota Fortuner",
+            vehicle_type_id: getId("SUV"),
+            model: "Mahindra XUV700",
+            createdAt: now,
+            updatedAt: now,
+          },
+
+          // Cruiser
+          {
+            id: uuidv4(),
+            vehicle_type_id: getId("Cruiser"),
+            model: "Royal Enfield Meteor",
             createdAt: now,
             updatedAt: now,
           },
           {
             id: uuidv4(),
-            vehicle_type_id: fourWheelerType.id,
-            model: "Tata Nexon",
+            vehicle_type_id: getId("Cruiser"),
+            model: "Bajaj Avenger",
             createdAt: now,
             updatedAt: now,
           },
