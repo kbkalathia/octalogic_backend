@@ -21,7 +21,7 @@ const VehiclesModel = sequelize.define(
   },
   {
     timestamps: true,
-    tableName: "vehicles",
+    tableName: "Vehicles",
   }
 );
 

@@ -20,10 +20,10 @@ app.post("/api/users", UsersController.createUser);
 app.get("/api/vehicle-types", VehicleTypesController.getVehicleTypes);
 
 // Vehicle
-app.get("/vehicles/:typeId", VehiclesController.getVehiclesByType);
+app.get("/api/vehicles/:typeId", VehiclesController.getVehiclesByType);
 
 // Bookings
-app.post("/bookings", BookingsController.createBooking);
+app.post("/api/bookings", BookingsController.createBooking);
 
 app.listen(5000, () => {
   console.log("Server is running on port 5000");
