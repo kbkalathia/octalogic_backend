@@ -6,7 +6,7 @@ module.exports = {
     const transaction = await queryInterface.sequelize.transaction();
     try {
       await queryInterface.createTable(
-        "Vehical_Types",
+        "Vehicle_Types",
         {
           id: {
             type: Sequelize.UUID,
@@ -45,7 +45,7 @@ module.exports = {
   async down(queryInterface) {
     const transaction = await queryInterface.sequelize.transaction();
     try {
-      await queryInterface.dropTable("Vehical_Types", { transaction });
+      await queryInterface.dropTable("Vehicle_Types", { transaction });
       await transaction.commit();
     } catch (error) {
       await transaction.rollback();

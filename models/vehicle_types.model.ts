@@ -1,6 +1,6 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../config/database";
-import VehiclesModel from "./vehicals.model";
+import VehiclesModel from "./vehicles.model";
 
 const VehicleTypesModel = sequelize.define(
   "Vehicle_Types",
