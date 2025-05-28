@@ -1,4 +1,5 @@
 "use strict";
+const { v4: uuidv4 } = require("uuid");
 
 /** @type {import('sequelize-cli').Migration} */
 module.exports = {
@@ -32,6 +33,28 @@ module.exports = {
             defaultValue: Sequelize.NOW,
           },
         },
+        { transaction }
+      );
+
+      // Seed values
+      await queryInterface.bulkInsert(
+        "Vehicle_Types",
+        [
+          {
+            id: uuidv4(),
+            wheels: 2,
+            name: "Two Wheelers",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+          {
+            id: uuidv4(),
+            wheels: 4,
+            name: "Four Wheelers",
+            createdAt: new Date(),
+            updatedAt: new Date(),
+          },
+        ],
         { transaction }
       );
 
