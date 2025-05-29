@@ -5,6 +5,7 @@ import UsersController from "./controllers/users.controller";
 import VehicleTypesController from "./controllers/vehicle_types.controller";
 import VehiclesController from "./controllers/vehicles.controller";
 import BookingsController from "./controllers/bookings.controller";
+import WheelsController from "./controllers/wheels.controller";
 
 const app = express();
 
@@ -15,6 +16,9 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Users
 app.post("/api/create-user", UsersController.createUser);
+
+// Wheels
+app.get("/api/get-unique-wheels", WheelsController.getUniqueWheels);
 
 // Vehicle Types
 app.get("/api/vehicle-types", VehicleTypesController.getVehicleTypes);
