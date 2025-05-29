@@ -116,6 +116,22 @@ module.exports = {
             createdAt: now,
             updatedAt: now,
           },
+
+          // Sports
+          {
+            id: uuidv4(),
+            vehicle_type_id: getId("Sports"),
+            model: "Yamaha",
+            createdAt: now,
+            updatedAt: now,
+          },
+          {
+            id: uuidv4(),
+            vehicle_type_id: getId("Sports"),
+            model: "Other Sports Bike",
+            createdAt: now,
+            updatedAt: now,
+          },
         ],
         { transaction }
       );

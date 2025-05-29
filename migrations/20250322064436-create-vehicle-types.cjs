@@ -69,6 +69,13 @@ module.exports = {
             createdAt: now,
             updatedAt: now,
           },
+          {
+            id: uuidv4(),
+            wheels: 2,
+            name: "Sports",
+            createdAt: now,
+            updatedAt: now,
+          },
         ],
         { transaction }
       );

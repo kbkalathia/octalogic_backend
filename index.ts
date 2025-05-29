@@ -14,7 +14,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Users
-app.post("/api/users", UsersController.createUser);
+app.post("/api/create-user", UsersController.createUser);
 
 // Vehicle Types
 app.get("/api/vehicle-types", VehicleTypesController.getVehicleTypes);
